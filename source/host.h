@@ -5,7 +5,7 @@
 #include <string>
 #include "hostVmShared.h"
 #include "Audio.h"
-
+#include <SDL2/SDL.h>
 #if (defined(_WIN32) || defined(__WIN32__))
 #include <direct.h> /* _mkdir */
 #define mkdir(A, B) _mkdir(A)
@@ -60,7 +60,8 @@ enum BgColorOption {
 class Host {
     uint8_t currKDown;
     uint8_t currKHeld;
-	
+    SDL_GameController *controller;
+    
     bool currKBDown = false;
     std::string currKBKey = "";
 	

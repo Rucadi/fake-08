@@ -15,11 +15,11 @@ export APP_VERSION	= v$(V_MAJOR).$(V_MINOR).$(V_PATCH).$(V_BUILD)
 export SOURCES   = ../../source ../../libs/z8lua ../../libs/utf8-util ../../libs/lodepng ../../libs/simpleini ../../libs/miniz 
 export INCLUDES  = ../../include ../../libs/z8lua ../../libs/utf8-util ../../libs/lodepng ../../libs/simpleini ../../libs/miniz
 
-.PHONY: all 3ds switch wiiu vita sdl2 sdl windows clean clean-3ds clean-switch clean-wiiu clean-vita clean-sdl2 clean-sdl clean-windows
+.PHONY: all 3ds switch wiiu vita sdl2 sdl windows clean clean-3ds clean-switch clean-wiiu clean-vita clean-sdl2 clean-sdl clean-windows clean-webOS
 
 all: 3ds switch wiiu vita bittboy windows
 
-clean: clean-tests clean-3ds clean-switch clean-wiiu clean-vita clean-sdl2 clean-sdl clean-bittboy clean-windows
+clean: clean-tests clean-3ds clean-switch clean-wiiu clean-vita clean-sdl2 clean-sdl clean-bittboy clean-windows clean-webOS
 
 clean-3ds:
 	@$(MAKE) -C platform/3ds clean
@@ -56,6 +56,9 @@ clean-miyoomini:
 
 clean-windows:
 	@$(MAKE) -C platform/windows clean
+
+clean-webOS:
+	@$(MAKE) -C platform/webOS clean
 
 3ds:
 	@$(MAKE) -C platform/3ds
@@ -95,6 +98,9 @@ miyoomini:
 
 windows:
 	@$(MAKE) -C platform/windows
+
+webOS:
+	@$(MAKE) -C platform/webOS
 
 clean-tests:
 	@$(MAKE) -C test clean

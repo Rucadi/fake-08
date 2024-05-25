@@ -1,0 +1,9 @@
+{
+    "id": "com.fake.fake8",
+    "version": "0.0.1",
+    "vendor": "Pico8Emulator",
+    "type": "native",
+    "main": "FAKE08",
+    "title": "Fake08",
+    "icon": "icon.jpg"
+}
